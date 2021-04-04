@@ -1,0 +1,542 @@
+[2021-04-02 23:30:09,144] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:30:09,148] ERROR in root: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a7e1f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7efde5a7e1f0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 719, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a7e1f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./gateway.py", line 93, in gateway
+    upstream_response = requests.request(
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a7e1f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2021-04-02 23:30:30,627] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:30:30,629] ERROR in root: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a03040>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7efde5a03040>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 719, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a03040>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./gateway.py", line 93, in gateway
+    upstream_response = requests.request(
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a03040>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2021-04-02 23:30:35,990] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:30:35,994] ERROR in root: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a7e3a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7efde5a7e3a0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 719, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a7e3a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./gateway.py", line 93, in gateway
+    upstream_response = requests.request(
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a7e3a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2021-04-02 23:31:18,699] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:31:18,701] ERROR in root: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5abed30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7efde5abed30>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 719, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5abed30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./gateway.py", line 93, in gateway
+    upstream_response = requests.request(
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5abed30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2021-04-02 23:31:22,903] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:31:22,905] ERROR in root: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a039d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7efde5a039d0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 719, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a039d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./gateway.py", line 93, in gateway
+    upstream_response = requests.request(
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /followers (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7efde5a039d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2021-04-02 23:33:59,451] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:34:01,417] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:35:03,521] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:35:25,344] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:35:28,380] DEBUG in root: Upstream URL: http://localhost:5200/
+[2021-04-02 23:35:31,416] DEBUG in root: Upstream URL: http://localhost:5200/
+[2021-04-02 23:36:05,370] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-02 23:36:14,751] DEBUG in root: Upstream URL: http://localhost:5200/posts
+[2021-04-02 23:36:27,243] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-02 23:37:08,783] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-02 23:37:17,938] DEBUG in root: Upstream URL: http://localhost:5200/followers
+[2021-04-02 23:39:14,335] DEBUG in root: Upstream URL: http://localhost:5100/followers
+[2021-04-02 23:39:17,647] DEBUG in root: Upstream URL: http://localhost:5100/followers
+[2021-04-02 23:39:28,178] DEBUG in root: Upstream URL: http://localhost:5100/followers/
+[2021-04-02 23:39:55,129] DEBUG in root: Upstream URL: http://localhost:5100followlhost%3A5000/users/
+[2021-04-02 23:39:55,129] ERROR in root: Failed to parse: http://localhost:5100followlhost%3A5000/users/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 379, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+  File "/usr/lib/python3/dist-packages/urllib3/util/url.py", line 392, in parse_url
+    return six.raise_from(LocationParseError(source_url), None)
+  File "<string>", line 3, in raise_from
+urllib3.exceptions.LocationParseError: Failed to parse: http://localhost:5100followlhost%3A5000/users/
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./gateway.py", line 93, in gateway
+    upstream_response = requests.request(
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 452, in prepare_request
+    p.prepare(
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 381, in prepare_url
+    raise InvalidURL(*e.args)
+requests.exceptions.InvalidURL: Failed to parse: http://localhost:5100followlhost%3A5000/users/
+[2021-04-02 23:39:57,931] DEBUG in root: Upstream URL: http://localhost:5100followlhost%3A5000/users
+[2021-04-02 23:39:57,932] ERROR in root: Failed to parse: http://localhost:5100followlhost%3A5000/users
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 379, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+  File "/usr/lib/python3/dist-packages/urllib3/util/url.py", line 392, in parse_url
+    return six.raise_from(LocationParseError(source_url), None)
+  File "<string>", line 3, in raise_from
+urllib3.exceptions.LocationParseError: Failed to parse: http://localhost:5100followlhost%3A5000/users
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./gateway.py", line 93, in gateway
+    upstream_response = requests.request(
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 452, in prepare_request
+    p.prepare(
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 381, in prepare_url
+    raise InvalidURL(*e.args)
+requests.exceptions.InvalidURL: Failed to parse: http://localhost:5100followlhost%3A5000/users
+[2021-04-02 23:40:17,225] DEBUG in root: Upstream URL: http://localhost:5100/users/
+[2021-04-02 23:40:38,749] DEBUG in root: Upstream URL: http://localhost:5100/users/
+[2021-04-02 23:40:47,234] DEBUG in root: Upstream URL: http://localhost:5100/followers
+[2021-04-02 23:41:01,265] DEBUG in root: Upstream URL: http://localhost:5100/posts
+[2021-04-02 23:41:04,403] DEBUG in root: Upstream URL: http://localhost:5100/posts/
+[2021-04-02 23:41:14,437] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-02 23:41:18,376] DEBUG in root: Upstream URL: http://localhost:5200/users/
+[2021-04-02 23:44:18,809] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-02 23:45:18,372] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-02 23:47:39,525] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-02 23:47:41,865] DEBUG in root: Upstream URL: http://localhost:5200/users/
+[2021-04-02 23:50:07,008] DEBUG in root: Upstream URL: http://localhost:5200/users/
+[2021-04-02 23:54:30,247] DEBUG in root: Upstream URL: http://localhost:5100/users/
+[2021-04-02 23:54:32,147] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 18:29:13,960] DEBUG in root: Requests logging enabled
+[2021-04-03 18:29:17,667] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 18:29:51,301] DEBUG in root: Upstream URL: http://localhost:5100/
+[2021-04-03 18:29:55,776] DEBUG in root: Upstream URL: http://localhost:5100/users/
+[2021-04-03 18:30:08,180] DEBUG in root: Upstream URL: http://localhost:5100/posts
+[2021-04-03 18:30:11,550] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 18:34:03,544] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:07,037] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:08,551] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:10,599] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:12,568] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:14,826] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:16,580] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:18,676] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:20,613] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:22,827] DEBUG in root: Requests logging enabled
+[2021-04-03 19:58:24,650] DEBUG in root: Requests logging enabled
+[2021-04-03 20:01:13,659] DEBUG in root: Requests logging enabled
+[2021-04-03 20:03:36,667] DEBUG in root: Requests logging enabled
+[2021-04-03 20:04:47,516] DEBUG in root: Requests logging enabled
+[2021-04-03 20:04:54,442] DEBUG in root: Requests logging enabled
+[2021-04-03 20:04:57,202] DEBUG in root: Requests logging enabled
+[2021-04-03 20:09:41,270] DEBUG in root: Requests logging enabled
+[2021-04-03 20:09:55,246] DEBUG in root: Requests logging enabled
+[2021-04-03 20:10:15,288] DEBUG in root: Requests logging enabled
+[2021-04-03 20:11:10,379] DEBUG in root: Requests logging enabled
+[2021-04-03 20:12:53,466] DEBUG in root: Requests logging enabled
+[2021-04-03 20:14:02,547] DEBUG in root: Requests logging enabled
+[2021-04-03 20:15:25,648] DEBUG in root: Requests logging enabled
+[2021-04-03 20:15:32,716] DEBUG in root: Requests logging enabled
+[2021-04-03 20:17:25,031] DEBUG in root: Requests logging enabled
+[2021-04-03 20:25:26,822] DEBUG in root: Requests logging enabled
+[2021-04-03 20:25:57,617] DEBUG in root: Requests logging enabled
+[2021-04-03 20:26:07,572] DEBUG in root: Requests logging enabled
+[2021-04-03 20:26:44,674] DEBUG in root: Requests logging enabled
+[2021-04-03 20:27:20,719] DEBUG in root: Requests logging enabled
+[2021-04-03 20:27:36,702] DEBUG in root: Requests logging enabled
+[2021-04-03 20:28:57,788] DEBUG in root: Requests logging enabled
+[2021-04-03 20:29:16,833] DEBUG in root: Requests logging enabled
+[2021-04-03 20:29:19,815] DEBUG in root: Requests logging enabled
+[2021-04-03 20:29:55,864] DEBUG in root: Requests logging enabled
+[2021-04-03 20:30:05,903] DEBUG in root: Requests logging enabled
+[2021-04-03 20:31:07,273] DEBUG in root: Requests logging enabled
+[2021-04-03 20:31:40,056] DEBUG in root: Requests logging enabled
+[2021-04-03 20:31:48,200] DEBUG in root: Requests logging enabled
+[2021-04-03 20:31:58,017] DEBUG in root: Requests logging enabled
+[2021-04-03 20:32:19,051] DEBUG in root: Requests logging enabled
+[2021-04-03 20:32:58,174] DEBUG in root: Requests logging enabled
+[2021-04-03 20:33:02,219] DEBUG in root: Requests logging enabled
+[2021-04-03 20:33:20,203] DEBUG in root: Requests logging enabled
+[2021-04-03 20:33:24,183] DEBUG in root: Requests logging enabled
+[2021-04-03 20:38:45,642] DEBUG in root: Requests logging enabled
+[2021-04-03 20:39:08,691] DEBUG in root: Requests logging enabled
+[2021-04-03 20:39:21,626] DEBUG in root: Requests logging enabled
+[2021-04-03 20:39:32,623] DEBUG in root: Requests logging enabled
+[2021-04-03 20:40:10,674] DEBUG in root: Requests logging enabled
+[2021-04-03 20:40:41,714] DEBUG in root: Requests logging enabled
+[2021-04-03 20:41:06,738] DEBUG in root: Requests logging enabled
+[2021-04-03 20:41:22,830] DEBUG in root: Requests logging enabled
+[2021-04-03 20:41:43,941] DEBUG in root: Requests logging enabled
+[2021-04-03 20:41:54,866] DEBUG in root: Requests logging enabled
+[2021-04-03 20:42:07,851] DEBUG in root: Requests logging enabled
+[2021-04-03 20:42:18,902] DEBUG in root: Requests logging enabled
+[2021-04-03 20:42:50,903] DEBUG in root: Requests logging enabled
+[2021-04-03 20:43:08,956] DEBUG in root: Requests logging enabled
+[2021-04-03 20:43:45,017] DEBUG in root: Requests logging enabled
+[2021-04-03 20:43:48,980] DEBUG in root: Requests logging enabled
+[2021-04-03 20:44:09,061] DEBUG in root: Requests logging enabled
+[2021-04-03 20:44:15,024] DEBUG in root: Requests logging enabled
+[2021-04-03 20:46:46,183] DEBUG in root: Requests logging enabled
+[2021-04-03 20:47:24,223] DEBUG in root: Requests logging enabled
+[2021-04-03 20:47:43,313] DEBUG in root: Requests logging enabled
+[2021-04-03 20:48:11,333] DEBUG in root: Requests logging enabled
+[2021-04-03 20:48:18,290] DEBUG in root: Requests logging enabled
+[2021-04-03 20:48:43,321] DEBUG in root: Requests logging enabled
+[2021-04-03 20:49:00,340] DEBUG in root: Requests logging enabled
+[2021-04-03 20:49:15,382] DEBUG in root: Requests logging enabled
+[2021-04-03 20:50:51,488] DEBUG in root: Requests logging enabled
+[2021-04-03 20:50:54,497] DEBUG in root: Requests logging enabled
+[2021-04-03 20:51:49,631] DEBUG in root: Requests logging enabled
+[2021-04-03 20:52:52,620] DEBUG in root: Requests logging enabled
+[2021-04-03 20:53:25,657] DEBUG in root: Requests logging enabled
+[2021-04-03 20:54:34,760] DEBUG in root: Requests logging enabled
+[2021-04-03 20:55:01,793] DEBUG in root: Requests logging enabled
+[2021-04-03 20:55:52,850] DEBUG in root: Requests logging enabled
+[2021-04-03 20:56:02,864] DEBUG in root: Requests logging enabled
+[2021-04-03 20:56:36,907] DEBUG in root: Requests logging enabled
+[2021-04-03 20:56:49,192] DEBUG in root: Requests logging enabled
+[2021-04-03 20:57:01,983] DEBUG in root: Requests logging enabled
+[2021-04-03 20:57:34,987] DEBUG in root: Requests logging enabled
+[2021-04-03 20:58:14,065] DEBUG in root: Requests logging enabled
+[2021-04-03 21:05:30,382] DEBUG in root: Requests logging enabled
+[2021-04-03 21:09:19,725] DEBUG in root: Requests logging enabled
+[2021-04-03 21:09:39,733] DEBUG in root: Requests logging enabled
+[2021-04-03 21:11:43,007] DEBUG in root: Requests logging enabled
+[2021-04-03 21:12:07,527] DEBUG in root: Requests logging enabled
+[2021-04-03 21:14:37,184] DEBUG in root: Requests logging enabled
+[2021-04-03 21:14:46,182] DEBUG in root: Requests logging enabled
+[2021-04-03 21:17:15,393] DEBUG in root: Requests logging enabled
+[2021-04-03 21:17:24,373] DEBUG in root: Requests logging enabled
+[2021-04-03 21:18:11,420] DEBUG in root: Requests logging enabled
+[2021-04-03 21:18:50,446] DEBUG in root: Requests logging enabled
+[2021-04-03 21:18:53,902] DEBUG in root: Requests logging enabled
+[2021-04-03 21:19:26,428] DEBUG in root: Requests logging enabled
+[2021-04-03 21:21:09,521] DEBUG in root: Requests logging enabled
+[2021-04-03 21:21:11,703] DEBUG in root: Upstream URL: http://localhost:5100/followers/henry
+[2021-04-03 21:21:24,956] DEBUG in root: Upstream URL: http://localhost:5100/followers/henry
+[2021-04-03 21:21:32,848] DEBUG in root: Upstream URL: http://localhost:5100/followers/henry
+[2021-04-03 21:21:42,961] DEBUG in root: Upstream URL: http://localhost:5100/followers/henry
+[2021-04-03 21:21:44,515] DEBUG in root: Upstream URL: http://localhost:5100/followers/henry
+[2021-04-03 21:21:45,478] DEBUG in root: Upstream URL: http://localhost:5100/followers/henry
+[2021-04-03 21:21:46,962] DEBUG in root: Upstream URL: http://localhost:5100/followers/henry
+[2021-04-03 21:23:19,209] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:23:25,234] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:23:26,166] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:24:03,154] DEBUG in root: Requests logging enabled
+[2021-04-03 21:24:04,975] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:24:12,006] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:24:13,290] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:24:42,112] DEBUG in root: Requests logging enabled
+[2021-04-03 21:24:45,361] DEBUG in root: Requests logging enabled
+[2021-04-03 21:24:47,356] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:24:50,035] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:24:51,176] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:25:43,716] DEBUG in root: Requests logging enabled
+[2021-04-03 21:25:47,278] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:25:50,280] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:25:51,220] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:25:51,994] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:25:52,818] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:25:53,746] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:25:55,068] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:25:56,379] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:26:18,467] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:26:41,011] DEBUG in root: Requests logging enabled
+[2021-04-03 21:26:41,513] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:26:43,736] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:26:44,613] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:26:45,694] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:26:46,764] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:27:11,928] DEBUG in root: Requests logging enabled
+[2021-04-03 21:27:13,237] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:27:16,868] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:27:23,404] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:27:31,573] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:28:02,944] DEBUG in root: Requests logging enabled
+[2021-04-03 21:28:04,926] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:28:14,882] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:28:16,695] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:29:05,986] DEBUG in root: Requests logging enabled
+[2021-04-03 21:29:07,699] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:29:10,249] DEBUG in root: Upstream URL: http://localhost:5300/posts/
+[2021-04-03 21:29:44,169] DEBUG in root: Requests logging enabled
+[2021-04-03 21:31:33,198] DEBUG in root: Requests logging enabled
+[2021-04-03 21:33:30,389] DEBUG in root: Requests logging enabled
+[2021-04-03 21:34:12,352] DEBUG in root: Requests logging enabled
+[2021-04-03 21:34:18,722] DEBUG in root: Requests logging enabled
+[2021-04-03 21:37:07,157] DEBUG in root: Requests logging enabled
+[2021-04-03 21:37:15,934] DEBUG in root: Requests logging enabled
+[2021-04-03 21:37:18,469] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:37:22,975] DEBUG in root: Upstream URL: http://localhost:5300/posts/
+[2021-04-03 21:37:25,764] DEBUG in root: Upstream URL: http://localhost:5400/posts/
+[2021-04-03 21:37:29,195] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:38:28,502] DEBUG in root: Upstream URL: http://localhost:5300/posts/
+[2021-04-03 21:38:33,669] DEBUG in root: Upstream URL: http://localhost:5400/posts/
+[2021-04-03 21:38:36,611] DEBUG in root: Upstream URL: http://localhost:5200/posts/
+[2021-04-03 21:39:35,481] DEBUG in root: Requests logging enabled
