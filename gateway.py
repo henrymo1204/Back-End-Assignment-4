@@ -10,9 +10,10 @@ import http.client
 import logging.config
 
 import bottle
-from bottle import route, request, response, get
+from bottle import route, request, response, get, post
 
 import requests
+import ast
 
 # Allow JSON values to be loaded from app.config[key]
 #
@@ -72,7 +73,12 @@ if not sys.warnoptions:
 
 @get('/home/<username>')
 def getHomeTimeline(username):
+    if not authenticated:
+        response.status = 401
+        return { 'Status' : response.status, 'message' : 'Unauthorized'}
     followers = list(requests.get('http://localhost:5100/followers/' + username).json().values())[0]
+    print(followers)
+    print(type(followers))
     timeline = list()
     for follower in followers:
          posts = list(requests.get('http://localhost:5200/posts/' + list(follower.values())[0]).json().values())[0][0]
@@ -81,6 +87,21 @@ def getHomeTimeline(username):
                    timeline.append(post)
     result = sorted(timeline, key=lambda k: k['time'], reverse=True)
     return {'timeline': result}
+
+authenticated = False
+
+@post('/authenticate/<username>/<password>')
+def authenticate(username, password):
+    global authenticated, user
+    payload = {'password' : password}
+    url = 'http://localhost:5100/users/' + username + '/password'
+    r = requests.post(url, json=payload)
+    print(r.status_code)
+    if r.status_code == 200:
+        authenticated = True
+    else:
+        authenticated = False
+    return { 'Authenticated' : authenticated }
 
 
 upstream_servers = json_config('proxy.upstreams')
@@ -92,6 +113,10 @@ timelines = timelines_server.copy()
 def gateway(url):
     path = request.urlparts._replace(scheme='', netloc='').geturl()
 
+    if not authenticated:
+        response.status = 401
+        return { 'Status' : response.status, 'message' : 'Unauthorized'}
+
     global timelines
 
     if path == '/posts/':
@@ -101,7 +126,7 @@ def gateway(url):
              logging.debug('Upstream URL: %s', upstream_url)
              if not timelines:
                   timelines = timelines_server.copy()
-             
+
     else:
         upstream_url = users_server + path
         logging.debug('Upstream URL: %s', upstream_url)
