@@ -13,7 +13,14 @@ Folder Contents:
    - Documentation_proj_4.pdf
 
 Software Requirements:
-   -
+   - python3 
+   - bottle
+   - 
    
 How to run:
+   - .bin/init.sh
+   - foreman start
+   - to authenticate
+   - http POST localhost:5000/authenticate/<username>/<password>
+         -example username: test password: test
 
