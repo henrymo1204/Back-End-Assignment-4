@@ -26,7 +26,7 @@ Software Requirements:
    - python3 
    - bottle
    - foreman
-   - 
+   - sqlite
    
 How to run:
    - $.bin/init.sh
