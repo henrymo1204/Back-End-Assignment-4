@@ -22,5 +22,6 @@ How to run:
    - foreman start
    - to authenticate
    - http POST localhost:5000/authenticate/<username>/<password>
+         
          -example username: test password: test
 
