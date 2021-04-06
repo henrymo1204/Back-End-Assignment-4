@@ -119,7 +119,7 @@ def gateway(url):
 
     global timelines
 
-    if path == '/posts/':
+    if '/posts' in path:
         if timelines:
              upstream_url = timelines[0] + path
              timelines.pop(0)
