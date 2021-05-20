@@ -104,9 +104,8 @@ def authenticate(username, password):
     return { 'Authenticated' : authenticated }
 
 
-upstream_servers = json_config('proxy.upstreams')
-users_server = upstream_servers[0]
-timelines_server = [upstream_servers[1], upstream_servers[2], upstream_servers[3]]
+users_server = json_config('proxy.user_streams')
+timelines_server = json_config('proxy.timeline_streams')
 timelines = timelines_server.copy()
 
 @route('<url:re:.*>', method='ANY')
@@ -128,7 +127,7 @@ def gateway(url):
                   timelines = timelines_server.copy()
 
     else:
-        upstream_url = users_server + path
+        upstream_url = users_server[0] + path
         logging.debug('Upstream URL: %s', upstream_url)
 
     headers = {}
