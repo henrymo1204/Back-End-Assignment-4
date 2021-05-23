@@ -10,7 +10,7 @@ import http.client
 import logging.config
 
 import bottle
-from bottle import route, request, response, get, post
+from bottle import route, request, response, get, post, auth_basic
 
 import requests
 import ast
@@ -71,37 +71,29 @@ if not sys.warnoptions:
     import warnings
     warnings.simplefilter('ignore', ResourceWarning)
 
+def authenticateUser(username, password):
+    payload = {'password' : password}
+    url = users_server[0] + '/users/' +  username + '/password'
+    r = requests.post(url, json=payload)
+    if r.status_code == 200:
+        return True
+    else:
+        return False
+
 @get('/home/<username>')
+@auth_basic(authenticateUser)
 def getHomeTimeline(username):
-    if not authenticated:
-        response.status = 401
-        return { 'Status' : response.status, 'message' : 'Unauthorized'}
-    followers = list(requests.get('http://localhost:5100/followers/' + username).json().values())[0]
+    followers = list(requests.get(users_server[0] + '/followers/' + username).json().values())[0]
     print(followers)
     print(type(followers))
     timeline = list()
     for follower in followers:
-         posts = list(requests.get('http://localhost:5200/posts/' + list(follower.values())[0]).json().values())[0][0]
+         posts = list(requests.get(timelines[0] +  '/posts/' + list(follower.values())[0]).json().values())[0][0]
          if posts != 'N':
               for post in posts:
                    timeline.append(post)
     result = sorted(timeline, key=lambda k: k['time'], reverse=True)
     return {'timeline': result}
-
-authenticated = False
-
-@post('/authenticate/<username>/<password>')
-def authenticate(username, password):
-    global authenticated, user
-    payload = {'password' : password}
-    url = 'http://localhost:5100/users/' + username + '/password'
-    r = requests.post(url, json=payload)
-    print(r.status_code)
-    if r.status_code == 200:
-        authenticated = True
-    else:
-        authenticated = False
-    return { 'Authenticated' : authenticated }
 
 
 users_server = json_config('proxy.user_streams')
@@ -109,12 +101,10 @@ timelines_server = json_config('proxy.timeline_streams')
 timelines = timelines_server.copy()
 
 @route('<url:re:.*>', method='ANY')
+@auth_basic(authenticateUser)
 def gateway(url):
     path = request.urlparts._replace(scheme='', netloc='').geturl()
 
-    if not authenticated:
-        response.status = 401
-        return { 'Status' : response.status, 'message' : 'Unauthorized'}
 
     global timelines
 
